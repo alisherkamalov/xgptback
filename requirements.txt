@@ -2,5 +2,6 @@ django
 djangorestframework
 g4f
 nodriver
+PyExecJS
 curl_cffi
 django-cors-headers
