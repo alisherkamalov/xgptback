@@ -1,5 +1,6 @@
 django
 djangorestframework
 g4f
+nodriver
 curl_cffi
 django-cors-headers
