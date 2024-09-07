@@ -11,7 +11,7 @@ class AskView(APIView):
                 return Response({"error": "Question is required"}, status=status.HTTP_400_BAD_REQUEST)
 
             # Запрос к API g4f
-            response = g4f.ChatCompletion.create(model=g4f.models.gpt_4, messages=[{"role": "user", "content": question}])
+            response = g4f.ChatCompletion.create(model=g4f.models.gpt_4o_mini, messages=[{"role": "user", "content": question}])
 
             # Проверка и обработка ответа
             if isinstance(response, str):
@@ -20,7 +20,7 @@ class AskView(APIView):
                 return Response({"error": "Unexpected response format"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
             if not gpt_response:
-                return Response({"error": "Failed to get a response from GPT-3.5-turbo"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                return Response({"error": "Failed to get a response from GPT-4"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
             return Response({"answer": gpt_response}, status=status.HTTP_200_OK)
 
