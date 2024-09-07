@@ -1,0 +1,4 @@
+"scripts": {
+  "vercel-build": "python manage.py collectstatic --noinput",
+  "vercel-dev": "python manage.py runserver"
+}
