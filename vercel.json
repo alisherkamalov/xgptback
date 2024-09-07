@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "manage.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "gptapp/views.py" }
+  ]
+}
