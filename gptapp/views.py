@@ -11,7 +11,7 @@ class AskView(APIView):
                 return Response({"error": "Question is required"}, status=status.HTTP_400_BAD_REQUEST)
 
             # Запрос к API g4f
-            response = g4f.ChatCompletion.create(model=g4f.models.gpt_4o_mini, messages=[{"role": "user", "content": question}])
+            response = g4f.ChatCompletion.create(model=g4f.models.gpt_4, messages=[{"role": "user", "content": question}])
 
             # Проверка и обработка ответа
             if isinstance(response, str):
