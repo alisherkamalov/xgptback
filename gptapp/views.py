@@ -18,7 +18,7 @@ class AskView(APIView):
 
             
             response = g4f.ChatCompletion.create(
-                model=g4f.models.gpt_4_turbo,
+                model='gpt-4-turbo',
                 provider=g4f.Provider.Nexra,
                 messages=self.context
             )
