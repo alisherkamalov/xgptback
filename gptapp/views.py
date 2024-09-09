@@ -1,5 +1,4 @@
 import g4f
-from g4f.client import Client
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
@@ -7,7 +6,7 @@ from rest_framework import status
 class AskView(APIView):
     
     context = []
-    client = Client()
+
 
     def post(self, request):
         try:
@@ -19,8 +18,8 @@ class AskView(APIView):
             self.context.append({"role": "user", "content": question})
 
 
-            response = client.chat.completions.create(
-                model='gpt-4-turbo,
+            response = g4f.ChatCompletion.create(
+                model='gpt-4-turbo',
                 provider=g4f.Provider.Chatgpt4o,
                 messages=self.context
             )
