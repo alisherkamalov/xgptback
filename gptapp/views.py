@@ -7,9 +7,7 @@ from rest_framework import status
 class AskView(APIView):
     
     context = []
-    client = Client(
-      provider=g4f.Provider.RetryProvider([g4f.Provider.Chatgpt4o, g4f.Provider.Chatgpt4Online, g4f.Provider.Liaobots, g4f.Provider.Nexra], shuffle=False)
-    )
+    client = Client()
 
     def post(self, request):
         try:
@@ -22,7 +20,8 @@ class AskView(APIView):
 
 
             response = client.chat.completions.create(
-                model=g4f.models.default,
+                model='gpt-4-turbo,
+                provider=g4f.Provider.Chatgpt4o,
                 messages=self.context
             )
             
