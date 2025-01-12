@@ -19,8 +19,8 @@ class AskView(APIView):
 
 
             response = g4f.ChatCompletion.create(
-                model='gpt-4-turbo',
-                provider=g4f.Provider.GeekGpt,
+                model='gpt-3.5',
+                provider=g4f.Provider.Vercel,
                 messages=self.context
             )
             
