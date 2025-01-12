@@ -19,8 +19,7 @@ class AskView(APIView):
 
 
             response = g4f.ChatCompletion.create(
-                model='gpt-3.5',
-                provider=g4f.Provider.OpenaiChat,
+                model='gpt-4o-mini',
                 messages=self.context
             )
             
