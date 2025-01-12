@@ -20,7 +20,7 @@ class AskView(APIView):
 
             response = g4f.ChatCompletion.create(
                 model='gpt-4-turbo',
-                provider=g4f.Provider.Phind,
+                provider=g4f.Provider.GeekGpt,
                 messages=self.context
             )
             
