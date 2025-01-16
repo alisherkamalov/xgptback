@@ -19,7 +19,8 @@ class AskView(APIView):
 
 
             response = g4f.ChatCompletion.create(
-                model='gpt-4o-mini',
+                model="gpt-3.5-turbo",
+                provider=g4f.Provider.Bing,
                 messages=self.context
             )
             
